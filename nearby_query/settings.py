@@ -54,7 +54,7 @@ ROOT_URLCONF = 'nearby_query.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,7 +99,26 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# Log confiugration
+# LOGGING_CONFIG = None
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': '/path/to/django/debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
